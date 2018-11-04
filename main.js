@@ -2,6 +2,8 @@
 
 
 var canvas = document.getElementById("canvas");
+var angleDiv1 = document.getElementById("angle1");
+var angleDiv2 = document.getElementById("angle2");
 
 var width = canvas.width;
 var height = canvas.height;
@@ -60,6 +62,9 @@ function drawRays(angle, n1, n2) {
 
 	ctx.strokeStyle = "rgba(255,255,255," + t + ")";
 	drawLine(mx, my, mx - l * sin(angle2) ,my + l * cos(angle2) * Math.sign(-c1));
+
+	angleDiv1.innerText = Math.round(Math.abs(angle) / Math.PI * 180) + "°";
+	angleDiv2.innerText = Math.round(Math.abs(angle2) / Math.PI * 180) + "°";
 }
 
 drawRays();
